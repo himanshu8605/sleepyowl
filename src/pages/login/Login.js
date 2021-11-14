@@ -12,12 +12,12 @@ import {
   Input,
 } from "reactstrap";
 import Widget from "../../components/Widget/Widget";
-import Footer from "../../components/Footer/Footer";
 import { loginUser } from "../../actions/auth";
 import hasToken from "../../services/authService";
+import loginImg from "../../assets/Login.png";
 
-import loginImage from "../../assets/loginImage.svg";
-import SofiaLogo from "../../components/Icons/SofiaLogo.js";
+import LogoImg from "../../assets/logo.svg";
+//import SofiaLogo from "../../components/Icons/SofiaLogo.js";
 import GoogleIcon from "../../components/Icons/AuthIcons/GoogleIcon.js";
 import TwitterIcon from "../../components/Icons/AuthIcons/TwitterIcon.js";
 import FacebookIcon from "../../components/Icons/AuthIcons/FacebookIcon.js";
@@ -56,13 +56,13 @@ const Login = (props) => {
               <div className="d-flex align-items-center justify-content-between py-3">
                 <p className="auth-header mb-0">Login</p>
                 <div className="logo-block">
-                  <SofiaLogo />
-                  <p className="mb-0">SOFIA</p>
+                <img style={{height:'40px'}} src={LogoImg} alt="Logo" />
+                  <p className="mb-0">SLEEPY OWL</p>
                 </div>
               </div>
-              <div className="auth-info my-2">
+              {/* <div className="auth-info my-2">
                 <p>This is a real app with Node.js backend - use <b>"admin@flatlogic.com / password"</b> to login!</p>
-              </div>
+              </div> */}
               <form onSubmit={(event) => doLogin(event)}>
                 <FormGroup className="my-3">
                   <FormText>Email</FormText>
@@ -95,30 +95,18 @@ const Login = (props) => {
                 </FormGroup>
                 <div className="bg-widget d-flex justify-content-center">
                   <Button className="rounded-pill my-3" type="submit" color="secondary-red">Login</Button>
-                </div>
-                <p className="dividing-line my-3">&#8195;Or&#8195;</p>
-                <div className="d-flex align-items-center my-3">
-                  <p className="social-label mb-0">Login with</p>
-                  <div className="socials">
-                    <a href="https://flatlogic.com/"><GoogleIcon /></a>
-                    <a href="https://flatlogic.com/"><TwitterIcon /></a>
-                    <a href="https://flatlogic.com/"><FacebookIcon /></a>
-                    <a href="https://flatlogic.com/"><GithubIcon /></a>
-                    <a href="https://flatlogic.com/"><LinkedinIcon /></a>
-                  </div>
-                </div>
-                <Link to="/register">Don’t have an account? Sign Up here</Link>
+                </div>             
+                  <Link to="/register">Don’t have an account? Sign Up here</Link>
               </form>
             </Widget>
           </Col>
           <Col xs={0} lg={6} className="right-column">
             <div>
-              <img src={loginImage} alt="Error page" />
+              <img src={loginImg} alt="Error page" />
             </div>
           </Col>
         </Row>
-      </Container>
-      <Footer />
+      </Container>      
     </div>
   )
 }

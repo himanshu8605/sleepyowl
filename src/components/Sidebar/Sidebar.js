@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import s from "./Sidebar.module.scss";
 import LinksGroup from "./LinksGroup/LinksGroup.js";
 import { changeActiveSidebarItem } from "../../actions/navigation.js";
-import SofiaLogo from "../Icons/SofiaLogo.js";
+import SofiaLogo from "../../assets/logo.svg";
 import cn from "classnames";
 
 const Sidebar = (props) => {
@@ -31,8 +31,8 @@ const Sidebar = (props) => {
   return (
     <nav className={cn(s.root, {[s.sidebarOpen]: burgerSidebarOpen})} >
       <header className={s.logo}>
-        <SofiaLogo/>
-        <span className={s.title}>SOFIA</span>
+        <img style={{height:'40px'}} src={SofiaLogo}/>
+        <span className={s.title}>SLEEPY OWL</span>
       </header>
       <ul className={s.nav}>
         <LinksGroup
@@ -43,7 +43,6 @@ const Sidebar = (props) => {
           iconName={<i className={'eva eva-home-outline'}/>}
           link="/template/dashboard"
           index="dashboard"
-          badge="9"
         />
         <h5 className={s.navTitle}>TEMPLATE</h5>
         <LinksGroup

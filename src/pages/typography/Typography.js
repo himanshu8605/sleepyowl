@@ -49,8 +49,8 @@ const Typography = () => {
               <Col xs={12} xl={6} className="mt-5 mt-xl-0">
                 <p className="headline-3 mb-4 text-muted">Fonts</p>
                 <p className="headline-2 mb-3">Poppins</p>
-                <p className="body-3 text-muted">The goal of this new type was to create a sans serif font which give an impression of both modernism, harmony and roundness. These nuances give Sofia a harmonious and sensible appearance for both texts and headlines. </p>
-                <p className="body-3 text-muted">This typeface is a complete redesign of Sofia initially designed in 2008. this typeface supports a wide range of languages with more than 500 glyphs. </p>
+                <p className="body-3 text-muted">The goal of this new type was to create a sans serif font which give an impression of both modernism, harmony and roundness. These nuances give SOFIA a harmonious and sensible appearance for both texts and headlines. </p>
+                <p className="body-3 text-muted">This typeface is a complete redesign of SOFIA initially designed in 2008. this typeface supports a wide range of languages with more than 500 glyphs. </p>
               </Col>
             </Row>
           </Widget>

@@ -12,7 +12,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import Footer from "../Footer/Footer";
 import Breadcrumbs from "../Breadbrumbs/Breadcrumbs";
 import Dashboard from "../../pages/dashboard/Dashboard";
-import Typography from "../../pages/typography/Typography";
+import Bookwrite from "../../pages/bookwrite/Bookwrite";
 import Notifications from "../../pages/notifications/Notifications";
 import Tables from "../../pages/tables/Tables";
 import Charts from "../../pages/uielements/charts/Charts";
@@ -33,7 +33,7 @@ const Layout = (props) => {
           <Switch>
             <Route path="/template" exact render={() => <Redirect to="template/dashboard"/>} />
             <Route path="/template/dashboard" exact component={Dashboard}/>
-            <Route path="/template/typography" exact component={Typography} />
+            <Route path="/template/typography" exact component={Bookwrite} />
             <Route path="/template/tables" exact component={Tables} />
             <Route path="/template/notifications" exact component={Notifications} />
             <Route path="/template/ui-elements" exact render={() => <Redirect to={"/template/ui-elements/charts"} />} />

@@ -1,17 +1,17 @@
-# 👇 Sofia React Template
+# 👇 SOFIA React Template
 
 Free and open-source admin dashboard template built with React v17.0.2 and Bootstrap v4.6. Developed with ❤️ by [Flatlogic](https://flatlogic.com/). If you love our project please star ⭐️ our repo!
 
-[View Demo](https://flatlogic.github.io/sofia-react-template/) | [Download](https://github.com/flatlogic/sofia-react-template.git) | [More templates](https://flatlogic.com/templates)
+[View Demo](https://flatlogic.github.io/SOFIA-react-template/) | [Download](https://github.com/flatlogic/SOFIA-react-template.git) | [More templates](https://flatlogic.com/templates)
 
-[![image](https://user-images.githubusercontent.com/63450826/135460125-6679bb33-3741-451f-9cfa-db1c08fee110.png)](https://flatlogic.github.io/sofia-react-template/)
+[![image](https://user-images.githubusercontent.com/63450826/135460125-6679bb33-3741-451f-9cfa-db1c08fee110.png)](https://flatlogic.github.io/SOFIA-react-template/)
 
-This dashboard is an initial version (containing only few components) of our future release of Sofia React Admin. It is built on the top of React 17, so it well supported along the web. You can easy customize template by changing SCSS variables. All paddings and colors are in _variables.scss file.
+This dashboard is an initial version (containing only few components) of our future release of SOFIA React Admin. It is built on the top of React 17, so it well supported along the web. You can easy customize template by changing SCSS variables. All paddings and colors are in _variables.scss file.
 
 ## Features
 
-Sofia React Template is a great template to quick-start development of SAAS, CMS, IoT Dashboard, E-Commerce apps, etc.
-Lite version of a Sofia React includes following features and pages:
+SOFIA React Template is a great template to quick-start development of SAAS, CMS, IoT Dashboard, E-Commerce apps, etc.
+Lite version of a SOFIA React includes following features and pages:
 
 * React v17
 * Bootstrap v4.6 & SCSS
@@ -43,9 +43,9 @@ We have implemented some basic pages, so you can see our template in action.
 ## Quick Start
 
 ### 1. Get the latest version
-You can start by cloning the latest version of Sofia React Template on your local machine by running:
+You can start by cloning the latest version of SOFIA React Template on your local machine by running:
 ```shell
-$ git clone https://github.com/flatlogic/sofia-react-template.git
+$ git clone https://github.com/flatlogic/SOFIA-react-template.git
 $ cd path/to/app
 ```
 
@@ -72,7 +72,7 @@ For any additional information please go to our [**support forum**](https://flat
 
 ## How can I support developers?
 - Star our GitHub repo :star:
-- [Tweet about it](https://twitter.com/intent/tweet?text=Amazing%20dashboard%20built%20with%20NodeJS,%20React%20and%20Bootstrap!&url=https://github.com/flatlogic/sofia-react-template&via=flatlogic).
+- [Tweet about it](https://twitter.com/intent/tweet?text=Amazing%20dashboard%20built%20with%20NodeJS,%20React%20and%20Bootstrap!&url=https://github.com/flatlogic/SOFIA-react-template&via=flatlogic).
 - Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
 - Follow [@flatlogic on Twitter](https://twitter.com/flatlogic).
 - Subscribe to Flatlogic newsletter at [flatlogic.com](https://flatlogic.com/)
@@ -90,4 +90,4 @@ For any additional information please go to our [**support forum**](https://flat
 Looking for premium themes and templates? Check out more [admin dashboard templates at flatlogic.com](https://flatlogic.com/admin-dashboards).
 
 ## License
-[MIT License](https://github.com/flatlogic/sofia-react-template/blob/master/LICENSE)
+[MIT License](https://github.com/flatlogic/SOFIA-react-template/blob/master/LICENSE)
