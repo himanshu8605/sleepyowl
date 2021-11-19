@@ -57,10 +57,19 @@ const Sidebar = (props) => {
         <LinksGroup
           onActiveSidebarItemChange={activeItem => props.dispatch(changeActiveSidebarItem(activeItem))}
           activeItem={props.activeItem}
-          header="Tables"
+          header="Home"
           isHeader
           iconName={<i className={'eva eva-grid-outline'}/>}
           link="/template/tables"
+          index="tables"
+        />
+        <LinksGroup
+          onActiveSidebarItemChange={activeItem => props.dispatch(changeActiveSidebarItem(activeItem))}
+          activeItem={props.activeItem}
+          header="Books"
+          isHeader
+          iconName={<i className={'eva eva-grid-outline'}/>}
+          link="/template/books"
           index="tables"
         />
         <LinksGroup

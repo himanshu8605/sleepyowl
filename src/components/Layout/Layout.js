@@ -13,6 +13,7 @@ import Footer from "../Footer/Footer";
 import Breadcrumbs from "../Breadbrumbs/Breadcrumbs";
 import Dashboard from "../../pages/dashboard/Dashboard";
 import Bookwrite from "../../pages/bookwrite/Bookwrite";
+import Books from "../../pages/book/Books";
 import Notifications from "../../pages/notifications/Notifications";
 import Tables from "../../pages/tables/Tables";
 import Charts from "../../pages/uielements/charts/Charts";
@@ -35,6 +36,7 @@ const Layout = (props) => {
             <Route path="/template/dashboard" exact component={Dashboard}/>
             <Route path="/template/typography" exact component={Bookwrite} />
             <Route path="/template/tables" exact component={Tables} />
+            <Route path="/template/books" exact component={Books} />
             <Route path="/template/notifications" exact component={Notifications} />
             <Route path="/template/ui-elements" exact render={() => <Redirect to={"/template/ui-elements/charts"} />} />
             <Route path="/template/ui-elements/charts" exact component={Charts} />
