@@ -44,17 +44,17 @@ const Sidebar = (props) => {
           link="/template/dashboard"
           index="dashboard"
         />
-        <h5 className={s.navTitle}>TEMPLATE</h5>
+        
         <LinksGroup
           onActiveSidebarItemChange={activeItem => props.dispatch(changeActiveSidebarItem(activeItem))}
           activeItem={props.activeItem}
-          header="Typography"
+          header="Write"
           isHeader
           iconName={<i className={'eva eva-text-outline'}/>}
           link="/template/typography"
           index="typography"
         />
-        <LinksGroup
+        {/* <LinksGroup
           onActiveSidebarItemChange={activeItem => props.dispatch(changeActiveSidebarItem(activeItem))}
           activeItem={props.activeItem}
           header="Home"
@@ -62,7 +62,7 @@ const Sidebar = (props) => {
           iconName={<i className={'eva eva-grid-outline'}/>}
           link="/template/tables"
           index="tables"
-        />
+        /> */}
         <LinksGroup
           onActiveSidebarItemChange={activeItem => props.dispatch(changeActiveSidebarItem(activeItem))}
           activeItem={props.activeItem}
@@ -75,13 +75,13 @@ const Sidebar = (props) => {
         <LinksGroup
           onActiveSidebarItemChange={activeItem => props.dispatch(changeActiveSidebarItem(activeItem))}
           activeItem={props.activeItem}
-          header="Notifications"
+          header="Library"
           isHeader
           iconName={<i className={'eva eva-bell-outline'}/>}
-          link="/template/notifications"
-          index="notifications"
+          link="/template/library"
+          index="library"
         />
-        <LinksGroup
+        {/* <LinksGroup
           onActiveSidebarItemChange={activeItem => props.dispatch(changeActiveSidebarItem(activeItem))}
           activeItem={props.activeItem}
           header="UI Elements"
@@ -100,11 +100,9 @@ const Sidebar = (props) => {
               header: 'Google Maps', link: '/template/ui-elements/maps',
             },
           ]}
-        />
+        /> */}
       </ul>
-      <div className="bg-widget d-flex mt-auto ml-1">
-        <Button className="rounded-pill my-3 body-2 d-none d-md-block" type="submit" color="secondary-red">Unlock Full Version</Button>
-      </div>
+    
     </nav>
   );
 }

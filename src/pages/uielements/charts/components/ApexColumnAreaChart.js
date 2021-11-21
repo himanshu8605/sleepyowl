@@ -12,7 +12,7 @@ const series = [{
 }];
 
 const chartSettings = {
-  colors: ['#4D53E0', '#C7D0D9'],
+  colors: ['#AF478A', '#C7D0D9'],
   chart: {
     toolbar: {
       show: false,

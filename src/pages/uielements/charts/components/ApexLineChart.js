@@ -60,7 +60,7 @@ const chartSettings = {
       stops: [40, 90, 100]
     }
   },
-  colors: ["#4D53E0", "#41D5E2"],
+  colors: ["#AF478A", "#41D5E2"],
   chart: {
     toolbar: {
       show: false,

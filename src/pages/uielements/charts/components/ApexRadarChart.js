@@ -32,9 +32,9 @@ const chartSettings = {
   labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
   fill: {
     opacity: 0.2,
-    colors: ["#4D53E0"],
+    colors: ["#AF478A"],
   },
-  colors: ["#4D53E0"],
+  colors: ["#AF478A"],
 };
 
 const ApexRadarChart = () => {

@@ -9,7 +9,7 @@ const chartsSettings = {
     data: [
       { name: 'Custom Classes', value: 300, color: '#FFC405' },
       { name: 'Different Types', value: 400, color: '#FF5668' },
-      { name: 'Credit Card', value: 400, color: '#4D53E0' },
+      { name: 'Credit Card', value: 400, color: '#AF478A' },
     ],
   }
 };
