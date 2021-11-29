@@ -51,6 +51,11 @@ const Login = (props) => {
     <div className="auth-page">
       <Container className="col-12">
         <Row className="d-flex align-items-center">
+        <Col xs={0} lg={6} className="right-column">
+            <div>
+              <img src={loginImg}  alt="Error page" />
+            </div>
+          </Col>
           <Col xs={12} lg={6} className="left-column">
             <Widget className="widget-auth widget-p-lg">
               <div className="d-flex align-items-center justify-content-between py-3">
@@ -100,11 +105,7 @@ const Login = (props) => {
               </form>
             </Widget>
           </Col>
-          <Col xs={0} lg={6} className="right-column">
-            <div>
-              <img src={loginImg} alt="Error page" />
-            </div>
-          </Col>
+        
         </Row>
       </Container>      
     </div>

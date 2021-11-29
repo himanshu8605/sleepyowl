@@ -31,11 +31,32 @@ import moreIcon from "../../assets/tables/moreIcon.svg";
 
 import s from "./Tables.module.scss";
 import mock from "./mock.js";
-
+const axios = require('axios');
 const Tables = function () {
 
+  const [booksList, setBooklist] = useState([]);
+  const [id, setId] = React.useState(1);
+  React.useEffect(() => {
+    if (id == null || id === '') {
+      return;
+    }
+    
+    axios.get('https://api.itbook.store/1.0/search/reaction')
+  .then(function (response) {
+    // handle success
+    console.log('response from book api:',response.data.books);
+    setBooklist(response.data.books)
+    // booksList=response.data.books;
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  }, [id]);
+
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [firstTable] = useState(mock.firstTable);
+  const [firstTable] = useState(mock.secondTable);
   const [secondTable] = useState(mock.secondTable);
   const [transactions, setTransactions] = useState(mock.transactionsWidget);
   const [tasks, setTasks] = useState(mock.tasksWidget);
@@ -44,7 +65,7 @@ const Tables = function () {
   const [tableDropdownOpen, setTableMenuOpen] = useState(false);
 
   const pageSize = 4;
-  const firstTablePagesCount = Math.ceil(firstTable.length / pageSize);
+  const firstTablePagesCount = Math.ceil(booksList.length / pageSize);
   const secondTablePagesCount = Math.ceil(secondTable.length / pageSize);
 
   const setFirstTablePage = (e, index) => {
@@ -95,13 +116,13 @@ const Tables = function () {
             <Col>
               <Widget>
                 <div className={s.tableTitle}>
-                  <div className="headline-2">States Colors</div>
+                  <div className="headline-2">Books</div>
                   <div className="d-flex">
-                    <a href="/#"><img src={searchIcon} alt="Search"/></a>
-                    <a href="/#"><img className="d-none d-sm-block" src={cloudIcon} alt="Cloud" /></a>
-                    <a href="/#"><img src={printerIcon} alt="Printer" /></a>
-                    <a href="/#"><img className="d-none d-sm-block" src={optionsIcon} alt="Options" /></a>
-                    <a href="/#"><img src={funnelIcon} alt="Funnel" /></a>
+                    <a ><img src={searchIcon} alt="Search"/></a>
+                    <a ><img className="d-none d-sm-block" src={cloudIcon} alt="Cloud" /></a>
+                    <a ><img src={printerIcon} alt="Printer" /></a>
+                    <a ><img className="d-none d-sm-block" src={optionsIcon} alt="Options" /></a>
+                    <a ><img src={funnelIcon} alt="Funnel" /></a>
                   </div>
                 </div>
                 <div className="widget-table-overflow">
@@ -118,14 +139,13 @@ const Tables = function () {
                           <label for="checkbox100"/>
                         </div>
                       </th>
-                      <th className="w-25">NAME</th>
-                      <th className="w-25">COMPANY</th>
-                      <th className="w-25">CITY</th>
-                      <th className="w-25">STATE</th>
+                      <th className="w-25">Name</th>
+                      <th className="w-25">Price</th>
+                      
                     </tr>
                     </thead>
                     <tbody>
-                    {firstTable
+                    {booksList
                       .slice(
                         firstTableCurrentPage * pageSize,
                         (firstTableCurrentPage + 1) * pageSize
@@ -142,10 +162,9 @@ const Tables = function () {
                               <Label for={item.id} />
                             </div>
                           </td>
-                          <td className="d-flex align-items-center"><img className={s.image} src={item.img} alt="User"/><span className="ml-3">{item.name}</span></td>
-                          <td>{item.company}</td>
-                          <td>{item.city}</td>
-                          <td>{item.state}</td>
+                          <td className="d-flex align-items-center"><img className={s.image} src={item.image} alt="Books"/><span className="ml-3">{item.title}</span></td>
+                          <td>{item.price}</td>
+                          
                         </tr>
                       ))}
                     </tbody>
@@ -177,180 +196,7 @@ const Tables = function () {
               </Widget>
             </Col>
           </Row>
-          <Row className="mb-4">
-            <Col>
-              <Widget>
-                <div className={s.tableTitle}>
-                  <div className="headline-2">Material UI table</div>
-                  <Dropdown
-                    className="d-none d-sm-block"
-                    nav
-                    isOpen={tableDropdownOpen}
-                    toggle={() => tableMenuOpen()}
-                  >
-                    <DropdownToggle nav>
-                      <img className="d-none d-sm-block" src={moreIcon} alt="More..."/>
-                    </DropdownToggle>
-                    <DropdownMenu >
-                      <DropdownItem>
-                        <div>Copy</div>
-                      </DropdownItem>
-                      <DropdownItem>
-                        <div>Edit</div>
-                      </DropdownItem>
-                      <DropdownItem>
-                        <div>Delete</div>
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-                </div>
-                <div className="widget-table-overflow">
-                  <Table className="table-striped table-borderless table-hover" responsive>
-                    <thead>
-                    <tr>
-                      <th>
-                        <div className="checkbox checkbox-primary">
-                          <input
-                            id="checkbox200"
-                            className="styled"
-                            type="checkbox"
-                          />
-                          <label for="checkbox200"/>
-                        </div>
-                      </th>
-                      <th className={s.nameCol}>NAME</th>
-                      <th>EMAIL</th>
-                      <th>PRODUCT</th>
-                      <th>PRICE</th>
-                      <th>DATE</th>
-                      <th>CITY</th>
-                      <th>STATUS</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {secondTable
-                      .slice(
-                        secondTableCurrentPage * pageSize,
-                        (secondTableCurrentPage + 1) * pageSize
-                      )
-                      .map(item => (
-                      <tr key={uuidv4()}>
-                        <td>
-                          <div className="checkbox checkbox-primary">
-                            <input
-                              id={item.id}
-                              className="styled"
-                              type="checkbox"
-                            />
-                            <label for={item.id} />
-                          </div>
-                        </td>
-                        <td>{item.name}</td>
-                        <td>{item.email}</td>
-                        <td>{item.product}</td>
-                        <td>{item.price}</td>
-                        <td>{item.date}</td>
-                        <td>{item.city}</td>
-                        <td><Badge color={item.color}>{item.status}</Badge></td>
-                      </tr>
-                    ))}
-                    </tbody>
-                  </Table>
-                  <Pagination className="pagination-with-border">
-                    <PaginationItem disabled={secondTableCurrentPage <= 0}>
-                      <PaginationLink
-                        onClick={e => setSecondTablePage(e, secondTableCurrentPage - 1)}
-                        previous
-                        href="#top"
-                      />
-                    </PaginationItem>
-                    {[...Array(secondTablePagesCount)].map((page, i) =>
-                      <PaginationItem active={i === secondTableCurrentPage} key={i}>
-                        <PaginationLink onClick={e => setSecondTablePage(e, i)} href="#top">
-                          {i + 1}
-                        </PaginationLink>
-                      </PaginationItem>
-                    )}
-                    <PaginationItem disabled={secondTableCurrentPage >= secondTablePagesCount - 1}>
-                      <PaginationLink
-                        onClick={e => setSecondTablePage(e, secondTableCurrentPage + 1)}
-                        next
-                        href="#top"
-                      />
-                    </PaginationItem>
-                  </Pagination>
-                </div>
-              </Widget>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12} xl={8} className="pr-grid-col">
-              <Widget>
-                <div className={s.tableTitle}>
-                  <div className="headline-2">Recent transaction</div>
-                  <div>
-                    <ButtonDropdown
-                      isOpen={dropdownOpen}
-                      toggle={toggle}
-                      className=""
-                    >
-                      <DropdownToggle caret>
-                        &nbsp; Weekly &nbsp;
-                      </DropdownToggle>
-                      <DropdownMenu>
-                        <DropdownItem>Daily</DropdownItem>
-                        <DropdownItem>Weekly</DropdownItem>
-                        <DropdownItem>Monthly</DropdownItem>
-                      </DropdownMenu>
-                    </ButtonDropdown>
-                    {/*<img src="" alt="Filter option"/>*/}
-                  </div>
-                </div>
-                <div className={s.widgetContentBlock}>
-                  {transactions.map(item => (
-                    <div key={uuidv4()} className={s.content}>
-                      <div><img src={item.icon} alt="Item" /><span className="body-2 ml-3">{item.category}</span></div>
-                      <div className="body-3 muted d-none d-md-block">{item.date}</div>
-                      <div className="body-2">{item.price}</div>
-                      <div className="body-3 muted d-none d-lg-block">{item.description}</div>
-
-                      <Dropdown
-                        className="d-none d-sm-block"
-                        nav
-                        isOpen={item.dropdownOpen}
-                        toggle={() => transactionMenuOpen(item.id)}
-                      >
-                        <DropdownToggle nav>
-                          <img className="d-none d-sm-block" src={moreIcon} alt="More ..."/>
-                        </DropdownToggle>
-                        <DropdownMenu >
-                          <DropdownItem>
-                            <div>Copy</div>
-                          </DropdownItem>
-                          <DropdownItem>
-                            <div>Edit</div>
-                          </DropdownItem>
-                          <DropdownItem>
-                            <div>Delete</div>
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </Dropdown>
-                    </div>
-                  ))}
-                </div>
-              </Widget>
-            </Col>
-            <Col xs={12} xl={4} className="pl-grid-col mt-4 mt-xl-0">
-              <Widget>
-                <div className={s.tableTitle}>
-                  <div className="headline-2">Tasks</div>
-                </div>
-                <div className={s.widgetContentBlock}>
-                  <TaskContainer tasks={tasks} toggleTask={toggleTask} />
-                </div>
-              </Widget>
-            </Col>
-          </Row>
+          
         </Col>
       </Row>
     </div>
